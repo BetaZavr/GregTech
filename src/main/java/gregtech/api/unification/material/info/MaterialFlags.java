@@ -157,18 +157,6 @@ public class MaterialFlags {
             .requireProps(PropertyKey.DUST)
             .build();
 
-    /**
-     * Add this to your Material if you want to have its Ore Calcite heated in a Blast Furnace for more output. Already listed are:
-     * Iron, Pyrite, PigIron, WroughtIron.
-     */
-    public static final MaterialFlag BLAST_FURNACE_CALCITE_DOUBLE = new MaterialFlag.Builder("blast_furnace_calcite_double")
-            .requireProps(PropertyKey.DUST)
-            .build();
-
-    public static final MaterialFlag BLAST_FURNACE_CALCITE_TRIPLE = new MaterialFlag.Builder("blast_furnace_calcite_triple")
-            .requireProps(PropertyKey.DUST)
-            .build();
-
     /////////////////
     //    FLUID    //
     /////////////////
@@ -262,5 +250,13 @@ public class MaterialFlags {
 
     public static final MaterialFlag HIGH_SIFTER_OUTPUT = new MaterialFlag.Builder("high_sifter_output")
             .requireProps(PropertyKey.GEM, PropertyKey.ORE)
+            .build();
+
+    public static final MaterialFlag WASHING_MERCURY = new MaterialFlag.Builder("washing_mercury")
+            .requireProps(PropertyKey.ORE)
+            .build();
+
+    public static final MaterialFlag WASHING_PERSULFATE = new MaterialFlag.Builder("washing_persulfate")
+            .requireProps(PropertyKey.ORE)
             .build();
 }
