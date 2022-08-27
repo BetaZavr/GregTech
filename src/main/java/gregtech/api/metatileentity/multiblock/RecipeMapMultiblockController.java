@@ -21,7 +21,6 @@ import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.GTUtility;
 import gregtech.common.ConfigHolder;
-import gregtech.common.blocks.BlockFireboxCasing;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
@@ -119,7 +118,7 @@ public abstract class RecipeMapMultiblockController extends MultiblockWithDispla
             for (BlockPos blockPos : variantActiveBlocks) {
                 IBlockState blockState = getWorld().getBlockState(blockPos);
                 if (blockState.getBlock() instanceof VariantActiveBlock) {
-                    getWorld().setBlockState(blockPos, blockState.withProperty(BlockFireboxCasing.ACTIVE, isActive));
+                    getWorld().setBlockState(blockPos, blockState.withProperty(VariantActiveBlock.ACTIVE, isActive));
                 }
             }
         }

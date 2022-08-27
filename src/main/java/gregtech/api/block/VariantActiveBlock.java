@@ -58,7 +58,14 @@ public class VariantActiveBlock<T extends Enum<T> & IStringSerializable> extends
     @Nonnull
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return super.getStateFromMeta(meta).withProperty(ACTIVE, meta / 8 >= 1);
+        int temp = meta;
+        if(temp - 8 >= 0) {
+            temp = temp - 8;
+        }
+
+        Class<T> enumClass = GTUtility.getActualTypeParameter(getClass(), VariantActiveBlock.class, 0);
+        T[] values = enumClass.getEnumConstants();
+        return getDefaultState().withProperty(VARIANT, values[temp]).withProperty(ACTIVE, meta >= 8);
     }
 
     @Override
