@@ -12,6 +12,7 @@ import gregtech.api.recipes.recipeproperties.RecipeProperty;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.util.CTRecipeHelper;
 import gregtech.api.util.ClipboardUtil;
+import gregtech.api.util.TooltipHelper;
 import gregtech.api.util.GTUtility;
 import gregtech.integration.jei.utils.AdvancedRecipeWrapper;
 import gregtech.integration.jei.utils.JEIHelpers;
@@ -114,9 +115,9 @@ public class GTRecipeWrapper extends AdvancedRecipeWrapper {
         if (entry != null) {
             double chance = entry.getChance() / 100.0;
             double boost = entry.getBoostPerTier() / 100.0;
-            tooltip.add(I18n.format("gregtech.recipe.chance", chance, boost));
+            tooltip.add(TooltipHelper.BLINKING_CYAN + I18n.format("gregtech.recipe.chance", chance, boost));
         } else if (notConsumed) {
-            tooltip.add(I18n.format("gregtech.recipe.not_consumed"));
+            tooltip.add(TooltipHelper.BLINKING_CYAN + I18n.format("gregtech.recipe.not_consumed"));
         }
     }
 
@@ -124,7 +125,7 @@ public class GTRecipeWrapper extends AdvancedRecipeWrapper {
         boolean notConsumed = input && isNotConsumedFluid(slotIndex);
 
         if (notConsumed) {
-            tooltip.add(I18n.format("gregtech.recipe.not_consumed"));
+            tooltip.add(TooltipHelper.BLINKING_CYAN + I18n.format("gregtech.recipe.not_consumed"));
         }
     }
 

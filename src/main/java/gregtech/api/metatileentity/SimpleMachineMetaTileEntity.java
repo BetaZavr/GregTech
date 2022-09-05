@@ -492,4 +492,12 @@ public class SimpleMachineMetaTileEntity extends WorkableTieredMetaTileEntity im
             tooltip.add(1, mainKey);
         }
     }
+
+    @Override
+    public void addToolUsages(ItemStack stack, @Nullable World world, List<String> tooltip, boolean advanced) {
+        tooltip.add(I18n.format("gregtech.tool_action.screwdriver.auto_output_covers"));
+        tooltip.add(I18n.format("gregtech.tool_action.wrench.set_facing"));
+        tooltip.add(I18n.format("gregtech.tool_action.soft_hammer.reset"));
+        super.addToolUsages(stack, world, tooltip, advanced);
+    }
 }
